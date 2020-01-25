@@ -11,8 +11,8 @@ import subprocess
 
 import requests
 
-VERSIONS = ['1.35', '1.36']
-TAGS_URL = "https://api.github.com/repos/kripken/emscripten/tags"
+VERSIONS = ['1.39.6']
+TAGS_URL = "https://api.github.com/repos/emscripten-core/emscripten/tags"
 VER_LINE = re.compile(r"^ENV EMCC_SDK_VERSION (1\.[0-9]+)\.[0-9]+$")
 
 verbose = False
