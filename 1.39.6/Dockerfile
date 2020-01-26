@@ -7,8 +7,8 @@ ENV EMCC_BINARYEN_VERSION version_90
 
 WORKDIR /
 
-RUN apt-get update && apt-get install -y --no-install-recommends gnupg ca-certificates build-essential cmake curl git-core openjdk-8-jre-headless python \
-    && apt-mark hold openjdk-8-jre-headless \
+RUN apt-get update && apt-get install -y --no-install-recommends gnupg ca-certificates build-essential cmake curl git-core openjdk-11-jre-headless python \
+    && apt-mark hold openjdk-11-jre-headless \
     && apt-mark hold make \
     && curl -sL https://deb.nodesource.com/setup_8.x | bash - \
     && apt-get install -y nodejs \
