@@ -82,11 +82,11 @@ def cmd_build(versions, push, latest):
     for v in versions:
         os.chdir(v)
         logging.info("Building emscripten-%s" % (v))
-        if subprocess.call(['docker', 'build', '-t', "apiaryio/emcc:%s" % (v), '.']):
-            logging.error("Building apiaryio/emcc:%s failed" % (v))
+        if subprocess.call(['docker', 'build', '-t', "aaronngray/emcc:%s" % (v), '.']):
+            logging.error("Building aaronngray/emcc:%s failed" % (v))
             os.chdir(cdir)
             continue
-        logging.info("Building of apiaryio/emcc:%s finished." % (v))
+        logging.info("Building of aaronngray/emcc:%s finished." % (v))
         os.chdir(cdir)
         if v is latest:
             di = subprocess.check_output('docker images -q | head -n 1',
@@ -94,15 +94,15 @@ def cmd_build(versions, push, latest):
             if subprocess.call(["docker",
                                 "tag",
                                 di,
-                                "apiaryio/emcc:latest"]):
+                                "aaronngray/emcc:latest"]):
 
                 logging.error(
-                    "Tagging as latest the apiaryio/emcc:%s failed" % (v))
+                    "Tagging as latest the aaronngray/emcc:%s failed" % (v))
                 continue
 
     if push:
-        logging.info('Pushing tags apiaryio/emcc')
-        push_tag("apiaryio/emcc")
+        logging.info('Pushing tags aaronngray/emcc')
+        push_tag("aaronngray/emcc")
 
 
 def main():
