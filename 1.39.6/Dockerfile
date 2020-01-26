@@ -1,7 +1,7 @@
 FROM debian:latest
 MAINTAINER Vilibald Wanča (vilibald.wanca@oracle.com)
 
-ENV EMCC_SDK_VERSION 1.39.66
+ENV EMCC_SDK_VERSION 1.39.6
 ENV EMCC_SDK_ARCH 64
 ENV EMCC_BINARYEN_VERSION version_90
 
